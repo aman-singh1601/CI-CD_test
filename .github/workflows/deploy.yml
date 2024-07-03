@@ -32,9 +32,9 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{secrets.SSH_USERNAME}}
-          key: ${{secrets.SSH_SECREYKEY}}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull aks1601/cicd:latest
             sudo docker stop cicd-test || true
